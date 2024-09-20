@@ -2,7 +2,7 @@ const userMiddleWare = {
   checkMissing: (req, res, next) => {
     try {
       const { email, password } = req.body;
-      if (!email) throw new Error("email is required!");
+      if (!email) throw new Error("Email is required!");
       if (!password) throw new Error("Password is required!");
       return next();
     } catch (error) {

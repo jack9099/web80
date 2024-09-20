@@ -1,19 +1,16 @@
 import { Router } from "express";
-import userController from "../controllers/user.controller.js";
-import userMiddleWare from "../middlewares/user.middleware.js";
+import filmController from "../controllers/film.controller.js";
+import filmMiddleWare from "../middlewares/film.middleware.js";
 
-const UserRouter = Router();
+const FilmRouter = Router();
 
-// Register
-UserRouter.post(
-  "/register",
-  userMiddleWare.checkMissing,
-  userController.createNewUser
+// CREATE new film
+FilmRouter.post(
+  "/new",
+  filmMiddleWare.checkMissing,
+  filmController.createNewFilm
 );
 
-// Login
-UserRouter.post("/login", userMiddleWare.checkMissing, userController.Login);
-
-// Put user
-UserRouter.put("/users/:id", userController.putUser);
-export default UserRouter;
+// GET list films
+FilmRouter.get("/list", filmController.getListsFilm);
+export default FilmRouter;

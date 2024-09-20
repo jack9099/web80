@@ -3,27 +3,27 @@ import { type } from "os";
 
 const filmSchema = new mongoose.Schema(
   {
-    fimlId: {
+    ID: {
       type: Number,
       required: true,
     },
-    filmName: {
+    name: {
       type: String,
       required: true,
     },
-    filmTime: {
+    time: {
       type: Number,
       required: true,
     },
-    filmYear: {
+    year: {
       type: Number,
       required: true,
     },
-    filmImage: {
+    image: {
       type: String,
       required: true,
     },
-    filmIntroduce: {
+    introduce: {
       type: String,
       default: "",
     },
