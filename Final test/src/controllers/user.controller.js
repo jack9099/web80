@@ -98,7 +98,6 @@ const userController = {
             });
           } else {
             req.user = decoded;
-            return next();
           }
         });
       }
@@ -118,7 +117,7 @@ const userController = {
       await crrUser.save();
       res.status(201).send({
         message: "Update successfully!",
-        data: "",
+        data: crrUser,
       });
     } catch (error) {
       res.status(500).send({
